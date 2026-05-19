@@ -1,23 +1,35 @@
 #include <cs50.h>
 #include <stdio.h>
-#include <stdio.h>
-
+#include <string.h>
+#include <ctype.h>
 
 int main(void)
 {
-    int numbers[] = {20, 500, 10, 5, 100, 1, 50};
+    char strings[][20] = {"karim", "Ahmad", "baba", "ya waylak", "shoul", "ana", "khatir"};
 
-    int n = get_int("Number: ");
-   int index = 0; 
-    int length = (sizeof numbers / sizeof numbers[0]);
-    for (int i = 0; i < length; i++) {
-        if(numbers[i] == n){
-        index = i;
-        printf("%i\n", index);
-        return 0;
+    int length = (sizeof strings / sizeof strings[0]);
+    printf("length: %i\n", length);
+    
+    string s =get_string("Enter Word: ");
+    
+    for(int j = 0; j < length; j++){
+
+        for(int i = 0, len = strlen(strings[j]); i < len; i++){
+            strings[j][i] = toupper(strings[j][i]);
         }
-        
+
     }
-    printf("not found\n");
+    for (int i = 0, len = strlen(s); i < len; i++) {
+        s[i] = toupper(s[i]);
+    }
+
+
+    for (int i = 0; i < length; i++) {
+        if(strcmp(strings[i], s) == 0){
+            printf("Found\n");
+            return 0;
+        }
+    }
+    printf("Not  found \n");
     return 1;
 }
