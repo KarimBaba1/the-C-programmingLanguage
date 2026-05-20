@@ -10,7 +10,15 @@ int main(void)
     draw(n);
 }
 
-void draw(int n ){
+void draw(int n){
+    if(n <= 0 ){
+        return;
+    }
+
+    for(int i = 0; i < n; i++){
+        printf("#");
+    }
+    printf("\n");
 
     draw(n-1);
 
