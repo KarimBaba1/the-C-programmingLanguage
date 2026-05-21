@@ -5,9 +5,9 @@ int main(void){
 
 char *s = "karim";
 
-    printf("%p\n", s);
+    printf("%s\n", s);
+    printf("%c\n", *s);
+    printf("%p\n", &s[0]);
     printf("%p\n", &s);
-    printf("%c\n", s[0]);
-    printf("%p\n", &s[1]);
-    printf("%p\n", &s[2]);
+    printf("%p\n", s);
 }

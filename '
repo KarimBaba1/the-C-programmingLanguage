@@ -1,0 +1,9 @@
+#include <stdio.h>
+#include <cs50.h>
+
+int main(void){
+
+char *s = "karim";
+
+    printf("%p\n", *s);
+}
